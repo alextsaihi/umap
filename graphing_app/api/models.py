@@ -30,7 +30,7 @@ class Sample(models.Model):
 
 class SampleSignal(models.Model):
     target = models.ForeignKey("Target", on_delete=models.CASCADE)
-    sample = models.ForeignKey("Sample", on_delete=models.CASCADE)
+    sample = models.ForeignKey("Sample", related_name='signals', on_delete=models.CASCADE)
     signal = models.FloatField()
 
 
